@@ -8,6 +8,7 @@ const logger = require('morgan');
 
 
 const productRouter = require('./routes/products');
+const userRouter = require('./routes/users');
 const connectDb=require('./config/db');
 
 const app=express();
@@ -25,6 +26,7 @@ app.use('/index',(req,res)=>{
 });
 
 app.use('/', productRouter);
+app.use('/', userRouter);
 
 const port=4000;
 app.listen(port,()=>{
